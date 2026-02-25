@@ -1,0 +1,90 @@
+{
+  "initialData": {
+    "initialPlayers": [
+      {
+        "name": "Andrew",
+        "rank": 0,
+        "melee": 0,
+        "kills": 0,
+        "deaths": 0,
+        "gamesPlayed": 0,
+        "gamesWon": 0,
+        "gamesFlaked": 1,
+        "id": 1
+      },
+      {
+        "name": "Hudson",
+        "rank": 0,
+        "melee": 0,
+        "kills": 0,
+        "deaths": 0,
+        "gamesPlayed": 0,
+        "gamesWon": 0,
+        "gamesFlaked": 0,
+        "id": 2
+      },
+      {
+        "name": "Sye",
+        "rank": 0,
+        "melee": 1,
+        "kills": 0,
+        "deaths": 0,
+        "gamesPlayed": 0,
+        "gamesWon": 0,
+        "gamesFlaked": 0,
+        "id": 3
+      },
+      {
+        "name": "Landon",
+        "rank": 0,
+        "melee": 0,
+        "kills": 0,
+        "deaths": 0,
+        "gamesPlayed": 0,
+        "gamesWon": 0,
+        "gamesFlaked": 0,
+        "id": 4
+      },
+      {
+        "name": "Daren",
+        "rank": 0,
+        "melee": 0,
+        "kills": 0,
+        "deaths": 0,
+        "gamesPlayed": 0,
+        "gamesWon": 0,
+        "gamesFlaked": 0,
+        "id": 5
+      }
+    ],
+    "initialGameModes": [
+      { "name": "Team Death Match", "active": false, "id": 1, "forts": true },
+      { "name": "Free For All", "active": false, "id": 2, "forts": false },
+      { "name": "Attack & Defend", "active": false, "id": 3, "forts": true },
+      { "name": "Capture The Flag", "active": false, "id": 4, "forts": true }
+    ]
+  },
+  "defaults": {
+    "defaultPlayer": {
+      "id": 0,
+      "name": "Placeholder Name",
+      "rank": 0,
+      "melee": 0,
+      "kills": 0,
+      "deaths": 0,
+      "gamesPlayed": 0,
+      "gamesWon": 0,
+      "gamesFlaked": 0
+    },
+    "defaultGameMode": {
+      "id": 0,
+      "name": "Placeholder Name",
+      "active": false,
+      "forts": false
+    }
+  },
+  "data": {
+    "players": [],
+    "gameModes": []
+  }
+}
