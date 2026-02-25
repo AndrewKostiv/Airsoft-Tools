@@ -3,8 +3,11 @@
   --secondary-color: #2f2f2f;
   --tertiary-color: #252525;
   --accent-color: #a4b0b8;
-  --background-color: #535353;
-  --text-color: #333333;
+  --background-color: #555d59;
+  --text-color: #ffffff;
+  --card1-color: #3a3a3a;
+  --card2-color: #1f1f1f;
+  --border-color: #000000;
   scroll-behavior: smooth;
 }
 
@@ -29,110 +32,5 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.btn {
-  background-color: grey;
-  transition: ease-in-out 50ms;
-  padding: 0.5rem 1.5rem;
-  border: solid 2px black;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.btn-list {
-  background-color: var(--accent-color);
-  transition: ease-in-out 50ms;
-  padding: 0.2rem 0.5rem;
-  margin-left: auto;
-  border: solid 2px black;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.1s;
-  cursor: pointer;
-}
-
-.btn-list:hover {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  width: min(700px, 90%);
-}
-
-.list-item {
-  display: flex;
-  width: min(700px, 90%);
-}
-
-.main-container {
-  background-color: var(--background-color);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  width: 100vw;
-}
-
-.dropdown {
-  margin: 0.5rem 0.5rem;
-  width: min(700px, 90%);
-  border: solid 4px black;
-  border-radius: 10px;
-  background-color: rgb(100, 100, 100);
-  overflow: hidden;
-}
-
-.dropdown-title {
-  background-color: var(--tertiary-color);
-  display: flex;
-  padding: 0.4rem;
-}
-
-.dropdown-title button {
-  margin-left: auto;
-}
-
-.dropdown-content {
-  display: block;
-  background-color: var(--secondary-color);
-  margin: 0;
-  padding: 0.8rem;
-}
-
-.player-list {
-  background-color: red;
-  width: min(700px, 90%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.player-list-header {
-  display: flex;
-}
-
-.inline {
-  display: inline;
-}
-
-.player {
-  background-color: var(--tertiary-color);
-  border: solid 2px black;
-  border-radius: 10px;
-  margin: 0.2rem 0;
-  padding: 0.2rem 1rem;
-  width: min(700px, 90%);
-  box-sizing: border-box;
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-
-.player button {
-  padding: 0.5rem 0.5rem;
-  margin-left: auto;
+  gap: 50px;
 }

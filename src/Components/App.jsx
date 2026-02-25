@@ -1,7 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import { Players } from "./Players/Players.jsx";
-import { Teams } from "./Teams.jsx";
-
+import { Teams } from "./Teams/Teams.jsx";
+import GameModes from "./GameModes/GameModes.jsx";
 const initialPlayers = [
   {
     name: "Player 1",
@@ -126,6 +126,7 @@ export default function App() {
       <h1>Airsoft Tools</h1>
       <Players players={players} dispatch={dispatch} />
       <Teams players={players} />
+      <GameModes gameModes={gameModes} dispatch={dispatch} />
       <div style={{ height: "10rem" }}></div>
     </div>
   );

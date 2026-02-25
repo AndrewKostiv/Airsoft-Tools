@@ -108,7 +108,7 @@ export function UpdatePlayer({ player, dispatch }) {
   return (
     <div>
       <h3>UpdatePlayer</h3>
-      <div>
+      <ul className={styles.UpdatePlayerProperties}>
         {properties.map((prop) => (
           <Property
             key={prop.propertyName}
@@ -119,7 +119,7 @@ export function UpdatePlayer({ player, dispatch }) {
             inputType={prop.inputType}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
@@ -148,15 +148,16 @@ export function Property({
   }
 
   return (
-    <div>
-      <span>{displayName}: </span>
+    <li className={styles.Property}>
+      <label htmlFor={propertyName}>{[displayName]}:</label>
       <input
+        id={propertyName}
         type={inputType}
         checked={inputType === "checkbox" ? player[propertyName] : undefined}
         value={inputType === "text" ? player[propertyName] : undefined}
         onChange={handleChange}
       />
-    </div>
+    </li>
   );
 }
 
