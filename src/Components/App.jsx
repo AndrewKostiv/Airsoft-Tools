@@ -1,6 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import styles from "./Players.module.css";
-import { Players } from "./Players.jsx";
+import { Players } from "./Players/Players.jsx";
 import { Teams } from "./Teams.jsx";
 
 const initialPlayers = [
@@ -101,55 +100,86 @@ function getNewGameMode(name) {
   };
 }
 
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "addPlayer":
+//       if (action.payload === "") return { ...state };
+//       return {
+//         ...state,
+//         players: [...state.players, getNewPlayer(action.payload)],
+//       };
+//     case "removePlayer":
+//       return {
+//         ...state,
+//         players: state.players.filter((player) => player.id !== action.payload),
+//       };
+//     case "updatePlayer":
+//       console.log("called updatePlayer");
+//       console.log(action.payload);
+
+//       return {
+//         ...state,
+//         players: state.players.map((player) =>
+//           player.id === action.payload.id
+//             ? { ...player, ...action.payload.updates }
+//             : player,
+//         ),
+//       };
+
+//     case "addGameMode":
+//       if (action.payload === "") return { ...state };
+//       return {
+//         ...state,
+//         gameModes: [...state.gameModes, getNewGameMode(action.payload)],
+//       };
+//     case "removeGameMode":
+//       return {
+//         ...state,
+//         gameModes: state.gameModes.filter((mode) => mode.id !== action.payload),
+//       };
+//     case "updateGameMode":
+//       return {
+//         ...state,
+//         gameModes: state.gameModes.map((mode) =>
+//           mode.id === action.payload.id
+//             ? { ...mode, ...action.payload.updates }
+//             : mode,
+//         ),
+//       };
+
+//     default:
+//       throw new Error("Unknown action");
+//   }
+// }
 function reducer(state, action) {
   switch (action.type) {
-    case "addPlayer":
-      if (action.payload === "") return { ...state };
+    case "addItem":
       return {
         ...state,
-        players: [...state.players, getNewPlayer(action.payload)],
+        [action.collection]: [...state[action.collection], action.payload],
       };
-    case "removePlayer":
-      return {
-        ...state,
-        players: state.players.filter((player) => player.id !== action.payload),
-      };
-    case "updatePlayer":
-      console.log("called updatePlayer");
-      console.log(action.payload);
 
+    case "removeItem":
       return {
         ...state,
-        players: state.players.map((player) =>
-          player.id === action.payload.id
-            ? { ...player, ...action.payload.updates }
-            : player,
+        [action.collection]: state[action.collection].filter(
+          (item) => item.id !== action.payload,
         ),
       };
 
-    case "addGameMode":
-      if (action.payload === "") return { ...state };
+    case "updateItem":
       return {
         ...state,
-        gameModes: [...state.gameModes, getNewGameMode(action.payload)],
-      };
-    case "removeGameMode":
-      return {
-        ...state,
-        gameModes: state.gameModes.filter((mode) => mode.id !== action.payload),
-      };
-    case "updateGameMode":
-      return {
-        ...state,
-        gameModes: state.gameModes.map((mode) =>
-          mode.id === action.payload.id
-            ? { ...mode, ...action.payload.updates }
-            : mode,
+        [action.collection]: state[action.collection].map((item) =>
+          item.id === action.payload.id
+            ? { ...item, ...action.payload.data }
+            : item,
         ),
       };
 
     default:
-      throw new Error("Unknown action");
+      console.log("Error:", action.type, "is not supported");
+      return state;
   }
 }
 
