@@ -5,7 +5,7 @@ import { Teams } from "./Teams.jsx";
 
 const initialPlayers = [
   {
-    name: "Andrew",
+    name: "Player 1",
     rank: 0,
     melee: 0,
     kills: 0,
@@ -17,7 +17,7 @@ const initialPlayers = [
     id: 1,
   },
   {
-    name: "Hudson",
+    name: "Player 2",
     rank: 0,
     melee: 0,
     kills: 0,
@@ -29,7 +29,7 @@ const initialPlayers = [
     id: 2,
   },
   {
-    name: "Sye",
+    name: "Player 3",
     rank: 0,
     melee: 1,
     kills: 0,
@@ -41,7 +41,7 @@ const initialPlayers = [
     id: 3,
   },
   {
-    name: "Landon",
+    name: "Player 4",
     rank: 0,
     melee: 0,
     kills: 0,
@@ -53,7 +53,7 @@ const initialPlayers = [
     id: 4,
   },
   {
-    name: "Daren",
+    name: "Player 5",
     rank: 0,
     melee: 0,
     kills: 0,
@@ -116,8 +116,8 @@ function reducer(state, action) {
       };
     case "updatePlayer":
       console.log("called updatePlayer");
-      console.log(action.payload)
-      
+      console.log(action.payload);
+
       return {
         ...state,
         players: state.players.map((player) =>
