@@ -55,7 +55,7 @@ export function Teams({ players }) {
         <button onClick={handleMakeTeams}>Make Teams</button>
       </div>
       {/*Checkbox to filter non present players */}
-      <div>
+      {/* <div>
         <label htmlFor="isPresent">Only include present players</label>
         <input
           style={{ transform: "scale(1.5)" }}
@@ -64,7 +64,7 @@ export function Teams({ players }) {
           checked={usePresent}
           onChange={(e) => setUsePresent(e.target.checked)}
         />
-      </div>
+      </div> */}
       {/* List of teams */}
       <ul>
         {teams.map((team, index) => (
