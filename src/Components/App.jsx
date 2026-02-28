@@ -2,6 +2,8 @@ import { useEffect, useReducer, useState } from "react";
 import { Players } from "./Players/Players.jsx";
 import { Teams } from "./Teams/Teams.jsx";
 import GameModes from "./GameModes/GameModes.jsx";
+import ChooseGameMode from "./ChooseGameMode/ChooseGameMode.jsx";
+import SectionCard from "./Utils/SectionCard/SectionCard.jsx";
 const initialPlayers = [
   {
     name: "Player 1",
@@ -66,25 +68,16 @@ const initialPlayers = [
 ];
 
 const initialGameModes = [
-  { name: "Team Death Match", active: false, id: 1, forts: true },
-  { name: "Free For All", active: false, id: 2, forts: false },
-  { name: "Attack & Defend", active: false, id: 3, forts: true },
-  { name: "Capture The Flag", active: false, id: 4, forts: true },
+  { name: "Team Death Match", active: false, id: 1, hasForts: true },
+  { name: "Free For All", active: false, id: 2, hasForts: false },
+  { name: "Attack & Defend", active: false, id: 3, hasForts: true },
+  { name: "Capture The Flag", active: false, id: 4, hasForts: true },
 ];
 
 const initialData = {
   players: initialPlayers,
   gameModes: initialGameModes,
 };
-
-function getNewGameMode(name) {
-  return {
-    name,
-    active: false,
-    forts: false,
-    id: crypto.randomUUID(),
-  };
-}
 
 function reducer(state, action) {
   switch (action.type) {
@@ -103,6 +96,8 @@ function reducer(state, action) {
       };
 
     case "updateItem":
+      console.log(action.payload);
+
       return {
         ...state,
         [action.collection]: state[action.collection].map((item) =>
@@ -127,6 +122,7 @@ export default function App() {
       <Players players={players} dispatch={dispatch} />
       <Teams players={players} />
       <GameModes gameModes={gameModes} dispatch={dispatch} />
+      <ChooseGameMode gameModes={gameModes} />
       <div style={{ height: "10rem" }}></div>
     </div>
   );

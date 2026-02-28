@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "/src/Components/Players/Players.module.css";
+import SectionCard from "../Utils/SectionCard/SectionCard";
 
 const propertyNameConversions = {
   name: "Name",
@@ -62,7 +63,8 @@ export function Players({ players, dispatch }) {
   const activePlayer =
     players.find((p) => p.id === activePlayerId) ?? players[0] ?? null;
   return (
-    <div className={styles.Players}>
+    <SectionCard className={styles.Players}>
+
       <h2>Players</h2>
       <AddPlayer dispatch={dispatch} />
       <div className={styles.PlayerHorizontal}>
@@ -80,7 +82,8 @@ export function Players({ players, dispatch }) {
           <UpdatePlayer player={activePlayer} dispatch={dispatch} />
         )}
       </div>
-    </div>
+    </SectionCard>
+
   );
 }
 
@@ -134,7 +137,6 @@ export function Property({
   function handleChange(e) {
     const newValue =
       inputType === "checkbox" ? e.target.checked : e.target.value;
-
     dispatch({
       type: "updateItem",
       collection: "players",

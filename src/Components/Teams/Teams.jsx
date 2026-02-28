@@ -1,10 +1,11 @@
 import { useState } from "react";
 import style from "./Teams.module.css";
+import SectionCard from "../Utils/SectionCard/SectionCard";
 
 export function Teams({ players }) {
   const [teamCount, setTeamCount] = useState(2);
   const [teams, setTeams] = useState([]);
-  const [usePresent, setUsePresent] = useState(true);
+  // const [usePresent, setUsePresent] = useState(true);
   const shuffleArray = (array) => {
     const shuffled = [...array];
     let currentIndex = shuffled.length;
@@ -17,7 +18,6 @@ export function Teams({ players }) {
         shuffled[currentIndex],
       ];
     }
-
     return shuffled;
   };
 
@@ -42,7 +42,7 @@ export function Teams({ players }) {
   }
 
   return (
-    <div className={style.Teams}>
+    <SectionCard className={style.Teams}>
       <h2>Team Randomizer</h2>
       {/* Input number of teams */}
       <div>
@@ -71,7 +71,7 @@ export function Teams({ players }) {
           <Team key={index} teamNumber={index} team={team} />
         ))}
       </ul>
-    </div>
+    </SectionCard>
   );
 }
 
