@@ -24,7 +24,7 @@ export default function GameModes({ gameModes, dispatch }) {
   const [activeGameModeId, setActiveGameModeId] = useState(
     gameModes[0].id ?? null,
   );
-  let activeGameMode = gameModes.find((mode) => (mode.id == activeGameModeId));
+  let activeGameMode = gameModes.find((mode) => mode.id == activeGameModeId);
   return (
     <SectionCard className={styles.GameModes}>
       <h2>GameModes</h2>
@@ -76,6 +76,7 @@ export function AddGameModes({ dispatch }) {
     };
   }
   function handleSubmit() {
+    if (gameModeName == "") return;
     dispatch({
       type: "addItem",
       collection: "gameModes",
