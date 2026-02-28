@@ -5,8 +5,10 @@ This Airsoft Tool will solve several problems my friends encountered in our game
 ## Feature List (so far):
 
 ```
-Player list (Add, remove, update players)
+Player list (Add, remove, update)
 Team Randomizer (Evenly separate players into different teams)
+Teams list (Add, remove, update)
+Game Mode randomizer
 ```
 
 ### Features Planned:
